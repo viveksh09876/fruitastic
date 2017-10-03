@@ -1,0 +1,233 @@
+<app-header class="inner-header"></app-header>
+<div class="banner_container cart-banner">
+  <!--<img src="assets/images/cart-banner.jpg" alt="">-->
+  <div class="banner_details text-center">
+    <div class="container">
+      <h1 class="animated fadeInDown go">So much goodness straight from</h1>
+      <span>local Aussie farms!! Delish!!</span>
+    </div>
+  </div>
+</div>
+
+<div class="product_sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12 cart-sidebar">
+
+        <div class="panel-group pnl-group-fix" id="cart-accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#cart-accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Products</a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <ul class="nav nav-tabs" role="tablist">
+                  <!-- <li class="text-center" *ngIf="catLoading">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <span class="sr-only">Loading...</span>
+                  </li> -->
+                  <li *ngFor="let cat of Categories; let i = index" [ngClass]="{'active': activeCatInd==i}" class="{{cat.class}}" (click)="ProFilter(cat.id, i)">
+                    <a href="javascript:void(0)" [innerHtml]="cat.name"></a>
+                  </li>
+                  <!-- <li (click)="ProFilter(2)" role="presentation" class="active fruit"><a href="javascript:void(0)" aria-controls="fruitstab" role="tab" data-toggle="tab">Fruit</a></li>
+                  <li (click)="ProFilter(5)" role="presentation" class="veg"><a href="javascript:void(0)" aria-controls="vegtab" role="tab" data-toggle="tab">Vegetables </a></li>
+                  <li (click)="ProFilter(3)" role="presentation" class="herb"><a href="javascript:void(0)" aria-controls="herbtab" role="tab" data-toggle="tab">Herbs</a></li>
+                  <li (click)="ProFilter(1)" role="presentation" class="dairy"><a href="javascript:void(0)" aria-controls="dairytab" role="tab" data-toggle="tab">Dairy</a></li>
+                  <li (click)="ProFilter(6)" role="presentation" class="other"><a href="javascript:void(0)" aria-controls="othertab" role="tab" data-toggle="tab">Others</a></li>
+                  <li (click)="ProFilter(7)" role="presentation" class="other"><a href="javascript:void(0)" aria-controls="othertab" role="tab" data-toggle="tab">Box</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingtwo">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#cart-accordion" href="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">Boxes</a>
+              </h4>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingthree">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#cart-accordion" href="#collapsethree" aria-expanded="true" aria-controls="collapsethree">Weekly Specials</a>
+              </h4>
+            </div>
+          </div> -->
+
+
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+        <h1 class="cart-title">Products</h1>
+        <!-- <div class="search_box">
+          <input type="text"><input type="submit" value="Search">
+        </div> -->
+        <div class="table-responsive product-list">
+          <table class="table">
+            <tr>
+              <th>Product Detail</th>
+              <th>Product Price</th>
+              <th class="text-center">Quantity</th>
+              <th>Sub Total</th>
+              <th class="actions"></th>
+            </tr>
+            <tr *ngFor="let pro of Products">
+              <td>
+                <img width="60" src="http://www.binaryfrog.co/dev/uploads/thumbs/{{pro.product_image}}" alt="{{pro.product_name}}">
+                <div class="item_details">
+                  <small class="red btn" *ngIf="pro.discount_option == 1">CLEARANCE</small>
+                  <small class="green btn" *ngIf="pro.discount_option == 2">{{pro.discounted}}% off</small>
+                  <h3 [innerHtml]="pro.product_name"></h3>
+                  <span class="per">per piece</span>
+                </div>
+              </td>
+              <td align="center" class="price"><small *ngIf="pro.discount_option != 0">${{pro.price | number : '1.2-2'}}</small> <span>${{pro.sel_price | number : '1.2-2'}}</span></td>
+              <td>
+                <div class="input-group input-group-sm cart-quantity">
+                  <span class="input-group-btn">
+                    <button (click)="minusQty(pro, $event)" type="button" class="quantity-left-minus btn btn-number minus-btn"  data-type="minus" data-field="">
+                      <span class="glyphicon glyphicon-minus"></span>
+                  </button>
+                  </span>
+                  <input type="text" name="quantity" class="quantity form-control input-number quantity-text" value="{{pro.qty}}" min="1" max="100">
+                  <span class="input-group-btn">
+                    <button (click)="addQty(pro, $event)" type="button" class="quantity-right-plus btn btn-number plus-btn" data-type="plus" data-field="">
+                      <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                  </span>
+                </div>
+              </td>
+              <td><strong>${{pro.qty * pro.sel_price | number : '1.2-2'}}</strong></td>
+              <td class="action" [ngClass]="pro.action">
+                <a href="javascript:void(0)" (click)="ProductAdd(pro, $event)" [ngClass]="{'cart-add': pro.action == 'add', 'check-add':  pro.action == 'added', 'check-update': pro.action == 'update'}">
+                  <p>
+                    <i *ngIf="pro.action == 'add'" class="fa fa-cart-plus fa-3x" aria-hidden="true"></i>
+                    <i *ngIf="pro.action == 'added'" class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+                    <i *ngIf="pro.action == 'update'" class="fa fa-upload fa-3x"></i>
+                  </p> <span [innerHtml]="pro.action"></span>
+                </a>
+              </td>
+            </tr>
+            <tr *ngIf="proLoading">
+              <td class="text-center">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+              </td>
+            </tr>
+            <tr *ngIf="noMore">
+              <td class="text-center">
+                <p>No more products availbe.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div *ngIf="cartProduct.length == 0">
+          <div class="order-box pnl-group-fix" role="tablist">
+            <span class="halfcircle"><i class="fa fa-align-justify"></i></span>
+            <div class="ipadview">
+              <p>Your Current Order: <span>0</span> ( 0 Products )</p>
+            </div>
+            <div class="desktop-view">
+              <h3 class="text-center">Your Order</h3>
+              <table class="table">
+                <tr>
+                  <th>Product Name</th>
+                  <th>Qty</th>
+                  <th>Sub Total</th>
+                  <th width="10"></th>
+                </tr>
+                <tr>
+                  <td colspan="10" class="text-center">Your Cart is empty</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><span>Your Shipping </span></td>
+                    <td>Free</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td colspan="4">
+                      <strong *ngIf="loc">Post Code:</strong> {{loc}} <!--<a href="javascript:void(0)">(Change)</a>-->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><span>Total Price</span></td>
+                    <td><span class="total">$0</span></td>
+                    <td></td>
+                  </tr>
+                </table>
+                <div class="coupon_code">
+                  <p>ENTER VOUCHER CODE IF YOU HAVE ONE. <a href="javascript:void(0)">APPLY HERE</a></p>
+                  <form [formGroup]="voucherCodeForm">
+                    <input type="text" class="form-control" placeholder="Code 7682">
+                    <input type="submit" class="" value="APPLY CODE">
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="cartProduct.length > 0" class="order-box pnl-group-fix" role="tablist" aria-multiselectable="true">
+          <span class="halfcircle"><i class="fa fa-align-justify"></i></span>
+          <div class="ipadview">
+            <p>Your Current Order: <span>$120.80</span> ( 20 Products )</p>
+            <a href="#" data-toggle="modal" data-target="#postcode_pop">Checkout <i class="fa fa-mail-forward"></i></a>
+          </div>
+          <div class="desktop-view">
+            <h3 class="text-center">Your Order</h3>
+            <table class="table">
+              <tr>
+                <th>Product Name</th>
+                <th>Qty</th>
+                <th>Sub Total</th>
+                <th width="10"></th>
+              </tr>
+              <tr *ngFor="let pro of cartProduct; let c = index">
+                <td [innerHtml]="pro.product_name"></td>
+                <td [innerHtml]="pro.qty"></td>
+                <td>${{pro.sel_price * pro.qty | number : '1.2-2'}}</td>
+                <td><a href="javascript:void(0)" (click)="cartProductRemove(c)"><i class="fa fa-minus"></i></a></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span>Item Subtotal</span></td>
+                <td>${{itemSubTotal | number : '1.2-2'}}</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="2"><span>Your Shipping </span></td>
+                <td>Free</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="4">
+                  <strong *ngIf="loc">Post Code:</strong> {{loc}} <!--<a href="javascript:void(0)">(Change)</a>-->
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><span>Total Price</span></td>
+                <td><span class="total">${{itemSubTotal | number : '1.2-2'}}</span></td>
+                <td></td>
+              </tr>
+            </table>
+            <div class="coupon_code">
+              <p>ENTER VOUCHER CODE IF YOU HAVE ONE. <a href="javascript:void(0)">APPLY HERE</a></p>
+              <form [formGroup]="voucherCodeForm">
+                <input type="text" class="form-control" placeholder="Code 7682">
+                <input type="submit" class="" value="APPLY CODE">
+              </form>
+            </div>
+            <div class="text-center">
+              <a href="javascript:void(0)" class="checkout-btn hoverd-btn keepshop"><i class="fa fa-mail-reply"></i> Keep Shoping</a>
+              <a routerLink="/cart" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<section class="special_sec fw text-center animatedParent">
+  <!-- special_sec start -->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 col-sm-12 special_cont">
+              <h1 class="assets-title">Weekly Special</h1>
+              <ul>
+                  <li *ngFor="let d of data" class="block bounceIn animated af">
+                      <figure><img src="assets/images/special_img2.png" alt="special_img1" class=""></figure>
+                      <h3 [innerHtml]="d.product_name"></h3>
+                      <p><span>${{d.price | number : '1.2-2'}}</span>${{d.sel_price | number : '1.2-2'}}</p>
+                      <div class="overlay"><a routerLink="shopnow" class="hoverd-btn view-bbdbsm btn btn-danger">Shop Now</a></div>
+                  </li>
+              </ul>
+              <p class="text-center"><a routerLink="shopnow" class="viewall hoverd-btn">Shop Now</a></p>
+          </div>
+      </div>
+  </div>
+</section>

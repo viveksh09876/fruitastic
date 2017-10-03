@@ -1,0 +1,106 @@
+<app-header class="inner-header"></app-header>
+<div class="banner_container about-us">
+  <div class="banner_details text-center">
+    <div class="container">
+      <h1 class="animated fadeInDown go">So much goodness straight from </h1>
+      <span class="animated fadeInUp go">local Aussie farms!! Delish!!</span>
+    </div>
+  </div>
+</div>
+
+<div class="contact_page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-4">
+        <div class="conatct_pic"><img src="assets/images/contact_new.jpg" alt="" class="img-responsive"></div>
+      </div>
+      <div class="col-md-6 col-sm-7 pull-right contact-form">
+        <h1>Bulk Order Enquiry</h1>
+        <p class="text-justify">Thank you for your interest in our wholesale supply to schools, office, or childcare centres. So we can tailor our
+          service to your needs, we ask you please fill out the form below and one of our staff members will be in contact
+          very shortly to discuss options available to you and possibly furnish you with a wholesale quote and have you onboard
+          and enjoying our service in no time at all. </p>
+
+
+
+        <form [formGroup]="bulkOrderForm" action="" method="post" id="BulkForm" novalidate="novalidate">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <!--<input class="form-control" type="text" placeholder="Name">-->
+              <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" name="name" id="name" placeholder="Name">
+                                <label class="input__label input__label--minoru" for="#">
+                                    
+                                </label>
+							</span>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <span class="input input--minoru">
+                                <textarea class="input__field input__field--minoru" placeholder="Address" name="address" id="address" rows="1"></textarea>
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+              <!--<span class="input input--minoru">
+                                <select class="input__field input__field--minoru" name="customer_type" id="customer_type">
+                                 <option value="Residential">Residential</option>
+                                 <option value="Corporate">Corporate</option>
+                                 <option value="School">School</option>
+                                 <option value="Childcare">Childcare</option>
+                                </select>
+                                <label class="input__label input__label--minoru" for="input-13"></label>
+							</span>-->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="email" name="email" id="email" placeholder="Email">
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <span class="input input--minoru">
+                                <input class="input__field input__field--minoru" type="text" id="contact_no" name="contact_no" placeholder="Phone Number">
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <span class="input input--minoru">
+                                <!--<input class="input__field input__field--minoru" type="text" id="input-13">-->
+                                <textarea class="input__field input__field--minoru" placeholder="Requirement" name="message" id="message"></textarea>
+                                <label class="input__label input__label--minoru" for="#">
+                                </label>
+							</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 col-sm-5">
+              <span class="input input--minoru">
+                                <label class="bulk-captcha-label">How much is 13+14 ?: <em class="text-danger">*</em></label>
+							</span>
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <span class="input input--minoru">
+                            	<input type="hidden" name="captcha_ans" id="captcha_ans" value="27">
+                                <input class="input__field input__field--minoru" type="text" id="captcha_value" name="captcha_value">
+                                <label class="input__label input__label--minoru"></label>
+							</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-offset-8 col-sm-4">
+              <span class="input input--minoru hoverd-btn bulk-order-submit-btn"> <input type="submit" value="Submit" name="submit" class="btn btn-link btn-block bulk-order-submit-btn"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

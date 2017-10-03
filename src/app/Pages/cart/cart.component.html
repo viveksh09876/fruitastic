@@ -1,0 +1,71 @@
+<app-header class="inner-header"></app-header>
+<!-- <div class="banner_container customer-details-banner">
+    <div class="banner_details text-center">
+      <div class="container">
+        <h1>heading for this page</h1>
+        <span>Will go here !!!</span>
+      </div>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 order-bar">
+        <ul>
+          <li><a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Order</a></li>
+          <li><a routerLink="your-details" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Your Details</a></li>
+          <li><a routerLink="delivery-day" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Delivery Day</a></li>
+          <li><a routerLink="payment" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Payment</a></li>
+          <li><a href="javascrip:void(0)">Complete</a></li>
+        </ul>
+      </div>
+      <div class="col-md-8 col-sm-7 customer-details">
+          <router-outlet></router-outlet>
+      </div>
+      <div class="col-md-4 col-sm-5">
+        <div class="order-box obox-2">
+          <h3 class="text-center">Your Order</h3>
+
+          <table class="table">
+            <tr>
+              <th>Product Name</th>
+              <th>Qty</th>
+              <th>Sub Total</th>
+              <th width="10"></th>
+            </tr>
+            <tr *ngFor="let pro of Products; let c = index">
+              <td [innerHtml]="pro.product_name"></td>
+              <td [innerHtml]="pro.qty"></td>
+              <td>${{pro.sel_price * pro.qty | number : '1.2-2'}}</td>
+              <td><a (click)="cartProductRemove(c)" href="javascript:void(0)"><i class="fa fa-minus"></i></a></td>
+            </tr>
+            <tr>
+              <td colspan="2"><span>Item Subtotal</span></td>
+              <td>${{itemSubTotal | number : '1.2-2'}}</td>
+              <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><span>Your Shipping </span></td>
+                <td>Free</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td colspan="4">
+                  <strong *ngIf="loc">Post Code:</strong> {{loc}} <!--<a href="javascript:void(0)">(Change)</a>-->
+                </td>
+              </tr>
+            <tr>
+              <td colspan="2"><span>Total Price</span></td>
+              <td><span class="total">${{itemSubTotal | number : '1.2-2'}}</span></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <p>ENTER VOUCHER CODE IF YOU HAVE ONE. <a href="javascript:void(0)">APPLY HERE</a></p>
+          <form [formGroup]="cupanVForm">
+            <input type="text" class="form-control">
+            <input type="submit" class="" value="APPLY CODE">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

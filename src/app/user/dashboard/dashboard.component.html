@@ -1,0 +1,158 @@
+<section class="user_section" *ngIf="user">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 col-md-2 text-center">
+              <img src="assets/images/Customer-Dashboard_user.png" alt="logo" class="img-responsive">
+          </div>
+          <div class="col-sm-9 col-md-10 text-left">
+              <h2 class="right_text">{{user.name}} <span>{{user.customer_id}}</span></h2>
+              <div class="wrape_three_sect">
+                  <h6>{{user.customer_type}}</h6>
+                  <h6>{{user.added_date | date}}</h6>
+              </div>
+
+              <div class="wrape_three_sect">
+                  <h6><span><img src="assets/images/Contact_icons.png" alt="logo" class="img-responsive"></span>{{user.contact}}</h6>
+                  <h6><span><img src="assets/images/Envolpe.png" alt="logo" class="img-responsive"></span>{{user.email}}</h6>
+              </div>
+
+              <div class="wrape_three_sect" *ngIf="address">
+                  <h6><span><img src="assets/images/location.png" alt="logo" class="img-responsive"></span>{{address.billing_address}}</h6>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+            <div class="col-sm-3 col-md-2">
+            </div>
+        <div class="col-sm-9 col-md-10 text-left">
+            <a href="javascript:void(0)" (click)="logout()">Log Out</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="table_records">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-4">
+              <div class="img_sect">
+                  <img src="assets/images/Customer-Dashboard_cart.png" alt="logo" class="img-responsive">
+              </div>
+              <div class="text_sect">
+                  <h3>Order</h3>
+                  <ul>
+                      <li><a href="javascript:void(0)">Reoccuring Orders</a></li>
+                      <li><a href="javascript:void(0)">Completed Orders</a></li>
+                      <li><a href="javascript:void(0)">New Order</a></li>
+                  </ul>
+              </div>
+          </div>
+
+           <div class="col-sm-4">
+              <div class="img_sect">
+                  <img src="assets/images/Customer-Dashboard_bag.png" alt="logo" class="img-responsive">
+              </div>
+              <div class="text_sect">
+                  <h3>Accounts</h3>
+                  <ul>
+                      <li><a href="javascript:void(0)">Invoices</a></li>
+                      <li><a href="javascript:void(0)">Refunds</a></li>
+                      <li><a href="javascript:void(0)">Payment Details</a></li>
+                  </ul>
+              </div>
+          </div>
+
+           <div class="col-sm-4">
+              <div class="img_sect">
+                  <img src="assets/images/Customer-Dashboardsquare.png" alt="logo" class="img-responsive">
+              </div>
+              <div class="text_sect">
+                  <h3>Profile Settings</h3>
+                  <ul>
+                      <li><a href="javascript:void(0)" target="_blank">My Info</a></li>
+                      <li><a href="javascript:void(0)">Delivery Locations</a></li>
+                      <li><a href="javascript:void(0)" target="_blank">Change Password </a> </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-12 wrape-table">
+              <h2>Recent Orders</h2>
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Order Date</th>
+                      <th>Order ID</th>
+                      <th>Delivery Date</th>
+                      <th class="text-center">Order Details</th>
+                      <th class="text-center">Status</th>
+                      <th>Delivery Address</th>
+                      <th class="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><button class="btn btn-default">Edit Order</button></td>
+                    </tr>
+                    <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><a class="btn btn-primary" href="javascript:void(0)">Invoice</a></td>
+                    </tr>
+                     <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><a class="btn btn-primary" href="javascript:void(0)">Invoice</a></td>
+                    </tr>
+                    <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><a class="btn btn-primary" href="javascript:void(0)">Invoice</a></td>
+                    </tr>
+                    <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><a class="btn btn-primary" href="javascript:void(0)">Invoice</a></td>
+                    </tr>
+                    <tr>
+                      <td>23/01/16</td>
+                      <td>RO9012.12</td>
+                      <td>TUE - 23/01/16</td>
+                      <td class="text-center"><a href="javascript:void(0)">View</a></td>
+                      <td  class="text-center">To be Processed</td>
+                      <td>2/1234 Sample Street Sample Suburb</td>
+                      <td class="text-center"><a class="btn btn-primary" href="javascript:void(0)">Invoice</a></td>
+                    </tr>
+                  </tbody>
+                  </table>
+                  <p class="text-center"><a href="javascript:void(0)" class="view_btn hoverd-btn">View All</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fruitastic</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css">
+  <link type="text/css" rel="stylesheet" href="assets/fonts/fonts.css">
+  <link type="text/css" rel="stylesheet" href="assets/fonts/font-awesome.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/responsive.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/animations.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/jquery.bxslider.css">
+  <link type="text/css" rel="stylesheet" href="assets/css/tymp.css">
+  <style>
+    .flash-messages {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 99999;
+}
+.modal-backdrop.in {
+  z-index: 123;
+}
+.inner-header .bottom_header .menu_sec .navbar-nav li a.active {
+  color: #ff4141 !important;
+}
+.bottom_header .menu_sec .navbar-nav li a.active::before,
+.bottom_header .menu_sec .navbar-nav li a.active::after {
+  width: 50%;
+}
+  </style>
+</head>
+<body>
+  <app-root></app-root>
+  <script type="text/javascript" src="assets/js/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/js/css3-animate-it.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
+  <script>
+    jQuery(document).ready(function(){
+      jQuery(window).scroll(function(){
+        if (jQuery(this).scrollTop() > 150) {
+        jQuery('.bottom_header').addClass('fixed-header');
+        }
+        else {
+        jQuery('.bottom_header').removeClass('fixed-header');
+        }
+      });
+    });
+    </script>
+</body>
+</html>

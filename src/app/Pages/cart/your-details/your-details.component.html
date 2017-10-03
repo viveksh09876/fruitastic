@@ -1,0 +1,120 @@
+<form [formGroup]="infoForm" (ngSubmit)="formSubmit(infoForm.value)" class="form-horizontal">
+    
+    <!-- <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">Customer Type:</label>
+        <div class="col-md-7 col-lg-8">
+              <label class="control-label"><strong>Corporate</strong></label>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-sm-12 col-md-6" *ngIf="userInfo">
+      <div class="form-group full">
+        <label class="col-md-5 col-lg-4 control-label">First Name:</label>
+        <div class="col-md-7 col-lg-8">
+          <input type="text" class="form-control" formControlName="name" value="{{userInfo.name}}">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6" *ngIf="userInfo">
+      <div class="form-group full">
+        <label class="col-md-5 col-lg-4 control-label">Last Name:</label>
+        <div class="col-md-7 col-lg-8">
+          <input type="text" class="form-control" formControlName="lastName" value="{{userInfo.lastName}}">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">First Name:</label>
+        <div class="col-md-7 col-lg-8">
+          <label class="control-label"><strong>abc</strong></label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">Last Name:</label>
+        <div class="col-md-7 col-lg-8">
+          <label class="control-label"><strong>def</strong></label>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-md-6 col-sm-6" *ngIf="userInfo">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">Phone Number:</label>
+        <div class="col-md-7 col-lg-8">
+            <input formControlName="contact_no" type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6" *ngIf="userInfo">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">Email:</label>
+        <div class="col-md-7 col-lg-8">
+            <input formControlName="email" type="hidden">
+          <label class="control-label"><strong>{{userInfo.email}}</strong></label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div class="form-group full">
+          <label class="col-md-2 control-label">Address</label>
+          <div class="col-md-10">
+              <input formControlName="address" id="address" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12">
+          <div class="form-group full">
+            <label class="col-md-2 control-label">Apartment</label>
+            <div class="col-md-10">
+              <input formControlName="apartment" type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+      <div class="col-md-12 col-sm-12">
+          <div class="form-group full">
+            <label class="col-md-2 control-label">Delivery Address</label>
+            <div class="col-md-10">
+              <span class="del-add">Same As Above 
+                <a (click)="sameAddTrue()" href="javascript:void(0)" [ngClass]="{'active': sameAsAdd}" class="same"><i class="fa fa-check"></i></a>
+                <a (click)="sameAddFalse()"href="javascript:void(0)" [ngClass]="{'active': !sameAsAdd}" class="diff"><i class="fa fa-close"></i></a>
+              </span>
+              <input formControlName="delv_address" id="same_address" [style.visibility]="sameAsAdd ? 'hidden' : 'visible' " type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12" [style.visibility]="sameAsAdd ? 'hidden' : 'visible' ">
+          <div class="form-group full">
+            <label class="col-md-2 control-label">Apartment</label>
+            <div class="col-md-10">
+              <input formControlName="delv_address_apartment" type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+    <!-- <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <label class="col-md-5 col-lg-4 control-label">New Password:</label>
+        <div class="col-md-7 col-lg-8">
+          <label class="control-label"><strong>123456789</strong></label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="form-group">
+        <label class="col-md-6 col-lg-5 control-label">Confirm Password:</label>
+        <div class="col-md-6 col-lg-7">
+          <label class="control-label"><strong>123456789</strong></label>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-md-12 col-sm-12">&nbsp;</div>
+    <div *ngIf="userInfo" class="col-md-12 col-sm-12 text-right">
+      <div class="form-group">
+        <div class="col-md-4 col-sm-4 col-sm-offset-8">
+          <input type="submit" value="Continue Order >" class="btn-block">
+        </div>
+      </div>
+    </div>
+  </form>

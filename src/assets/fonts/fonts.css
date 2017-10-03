@@ -1,0 +1,55 @@
+@font-face {
+	font-family: 'DK Black Bamboo';
+	src: url('DKBlackBamboo.eot');
+	src: url('DKBlackBamboo.eot?#iefix') format('embedded-opentype'),
+		url('DKBlackBamboo.woff') format('woff'),
+		url('DKBlackBamboo.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Papyrus';
+	src: url('Papyrus-Regular.eot');
+	src: url('Papyrus-Regular.eot?#iefix') format('embedded-opentype'),
+		url('Papyrus-Regular.woff') format('woff'),
+		url('Papyrus-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Parisien Night';
+	src: url('ParisienNight.eot');
+	src: url('ParisienNight.eot?#iefix') format('embedded-opentype'),
+		url('ParisienNight.woff') format('woff'),
+		url('ParisienNight.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Parisian';
+	src: url('Parisian.eot');
+	src: url('Parisian.eot?#iefix') format('embedded-opentype'),
+		url('Parisian.woff') format('woff'),
+		url('Parisian.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Remachine Script Personal Use';
+	src: url('RemachineScriptPersonalUseOnly.eot');
+	src: url('RemachineScriptPersonalUseOnly.eot?#iefix') format('embedded-opentype'),
+		url('RemachineScriptPersonalUseOnly.woff') format('woff'),
+		url('RemachineScriptPersonalUseOnly.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DK Bocadillo';
+	src: url('DKBocadillo-Regular.eot');
+	src: url('DKBocadillo-Regular.eot?#iefix') format('embedded-opentype'),
+		url('DKBocadillo-Regular.woff') format('woff'),
+		url('DKBocadillo-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
