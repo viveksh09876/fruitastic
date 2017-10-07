@@ -32,7 +32,7 @@ h3{font-family: 'Roboto', sans-serif;}
 
 /*===========header css start here=============*/
 .top_slider header{position: absolute;z-index: 99; width: 100%; top: 0; left: 0;   }
-.top_header {background: #ff4141;padding: 15px 0 8px;}
+.top_header {background: #ff4141;padding:8px 0;}
 .top_header .social_icon{ margin-left: 0px;}
 .top_header .social_icon li {display: inline-block;padding: 0 6px;vertical-align: middle;}
 .top_header .social_icon li:first-child {padding-left: 0;}
@@ -74,10 +74,23 @@ h3{font-family: 'Roboto', sans-serif;}
 .bottom_header .menu_sec .login_part li a {background: rgba(0, 0, 0, 0) none repeat scroll 0 0;color: #fd6868 !important; font-size: 15px;text-transform:uppercase;transition: all 0.5s ease 0s;  -moz-transition:all 0.5 ease 0s;-webkit-transition:all 0.5 ease 0s;}
 .bottom_header {padding: 5px 0px 0px 0px;}
 .bottom_header .menu_sec .login_part li a i {position: relative;margin-right: 18px; color:#fff;     font-style: normal;}
-.bottom_header .menu_sec .login_part li a i::after {background: #ff4141;border: 2px solid #ffffff;border-radius: 25px; content: ""; display: inline-block; font-weight: 600; height: 24px; font-style: normal; position: absolute; right: -8px; text-align: center; top: -3px; width: 24px;
-    color: #fff; z-index: -1;}
-.bottom_header .menu_sec .login_part li a i::before {background: rgba(0, 0, 0, 0) url("../images/cart_img2.png") no-repeat scroll 0 0;    bottom: -10px; content: ""; height: 30px; left: -24px; position: absolute; width: 29px; z-index: -2;}
-.fixed-header .menu_sec .login_part li a i::before {background-position: 0 -30px;}
+.bottom_header .menu_sec .login_part li a i::after {background: #ff4141;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    content: "";
+    display: inline-block;
+    font-weight: 600;
+    height: 24px;
+    font-style: normal;
+    position: absolute;
+    right: -8px;
+    text-align: center;
+    top: -4px;
+    width: 24px;
+    color: #fff;
+    z-index: -1;}
+.bottom_header .menu_sec .login_part li a i::before {bottom: -10px;left: -28px;
+    content: "\f07a"; position: absolute; z-index: -2; font-size: 26px;}
 .bottom_header .menu_sec .nav.navbar-nav {padding-top: 20px;padding-right: 50px;}
 .menu_sec .login_part {display: inline-block;vertical-align: middle; /*padding: 0 0 0 35px;*/}
 .fixed-header {background: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.2);left: 0;padding:5px 0;position: fixed;top: 0;transition: all 0.5s ease 0s;width: 100%;z-index: 999999;}
@@ -132,7 +145,7 @@ h3{font-family: 'Roboto', sans-serif;}
 .delivery_cont img{ display: inline-block; vertical-align: middle; /*margin: 10px 4%;*/     margin: -15px 1%;     width: 89px;}
 .delivery_cont p{ display: inline-block; vertical-align: middle; color: #333333; font-size: 14px; padding-right: 3%; text-transform: capitalize; margin: 0; width: 34%;}
 /*.delivery_cont input[type="text"]{ display: inline-block; vertical-align: middle; font-size: 16px; color: #999999;  border: 0; border-left: 1px solid #669933; text-align: center; padding: 0 10px;; width: 25%;}*/
-.delivery_cont input[type="text"]{ display: inline-block; vertical-align: middle; font-size: 16px; color: #999999;  border: 0; border-left: 1px solid #669933; text-align: center; padding: 0 0 0 40px;; width: 25%;}
+.delivery_cont input[type="text"]{ display: inline-block; vertical-align: middle; font-size: 16px; color: #999999;  border: 0; border-left: 1px solid #669933; text-align: left; padding: 0 0 0 40px;; width: 25%;}
 .delivery_cont a{ background: #ff4141;border: 0 none;border-radius: 0;color: #ffffff;text-transform: uppercase;cursor: pointer; float: right; line-height: 39px; padding: 10px 30px; height: 59px; position: relative; transform: perspective(1px) translateZ(0px); transition-duration: 0.5s; transition-property: color;  vertical-align: middle;}
 
 .cus-btn:hover:before{ transform: scaleX(1); transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);}

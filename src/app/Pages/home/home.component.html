@@ -45,7 +45,7 @@
                <div class="delivery_cont">
                    <img src="assets/images/if_JD-29_2183552.svg" alt="car_img">
                    <p>Check your Post Code for Free Delivery</p>
-                   <input type="text" name="pin_code" id="pin_code" placeholder="Enter your post code" >
+                   <input type="text" value="Enter your post code" onclick="if(this.value=='Enter your post code'){this.value=''}" onblur="if(this.value==''){this.value='Enter your post code'}">
                    <a (click)="checkPostcode()" href="javsscript:void(0)" class="hoverd-btn">Check Now</a>
                </div>
            </div>
