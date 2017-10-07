@@ -58,7 +58,7 @@
                           </nav>
                           <span class="login_part">
                                <li *ngIf="products.length > 0"><a routerLink="/cart"><i>{{products.length}}</i>${{itemSubTotal | number : '1.2-2'}}</a></li>
-                               <li *ngIf="products.length <= 0"><a routerLink="/shopnow"><i>0</i></a></li>
+                               <li *ngIf="products.length <= 0"><a routerLink="/shopnow"><i class="fa fa-shoping-cart">0</i></a></li>
                           </span>
                     </div>
                 </div>
