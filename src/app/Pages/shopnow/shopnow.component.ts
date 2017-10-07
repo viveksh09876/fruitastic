@@ -18,7 +18,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   activeCatInd: number;
   catLoading: boolean = true;
   proLoading: boolean = true;
-  cartProduct: any[] = [];
+  cartProduct = [];
   itemSubTotal: number;
   voucherCodeForm: FormGroup;
   loc: any;
@@ -66,12 +66,10 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
       return res.json();
     }).subscribe((data) => {
       this.Categories = data;
-      console.log(this.Categories);
       if(this.Categories) {
         this.catLoading = false;
         this.GetProduct(2, 1);
         this.activeCat = this.Categories[0]['id'];
-        console.log(this.activeCat);
       }
     });
   }
@@ -99,6 +97,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
         }
       });
       this.PushProductList(data, page);
+      this.cartProduct = JSON.parse(localStorage.getItem('cartProduct'));
       // if(page > 1) {
       //   //this.Products.push(data);
       //   console.log(typeof(this.Products));
@@ -157,7 +156,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   }
   PushProduct(pro) {
     this.cartProduct.push(pro);
-    //this.CartProducts
+    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
   }
   ProductAdd(pro, event) {
     const btn = event.target || event.srcElement || event.currentTarget;

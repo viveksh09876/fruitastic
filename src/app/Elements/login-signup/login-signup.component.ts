@@ -70,11 +70,18 @@ export class LoginSignupComponent implements OnInit {
   }
 
   signup(values) {
+    let loginData = {
+      email:values.email,
+      pass:values.pass
+    }
+
     this.authService.signUp(values).subscribe(data => {
-      if(data.status=='Deactive') {
-        $('#signupModal').modal('hide');
-        localStorage.setItem('user', data[0].id);
-        this._flashMessagesService.show('Your are register successfully!', { cssClass: 'alert-success', timeout: 2000 });
+      if(data[0].status=='Deactive') {
+        this.authService.doLogin(loginData).subscribe(ldata => {
+          $('#signupModal').modal('hide');
+          localStorage.setItem('user', ldata[0].id);
+          this._flashMessagesService.show('Your are register successfully!', { cssClass: 'alert-success', timeout: 2000 });
+        });
       } else {
         this._flashMessagesService.show('Register Failure!', { cssClass: 'alert-danger', timeout: 2000 });
       }

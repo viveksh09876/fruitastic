@@ -205,7 +205,7 @@
             </div>
             <div class="text-center">
               <a href="javascript:void(0)" class="checkout-btn hoverd-btn keepshop"><i class="fa fa-mail-reply"></i> Keep Shoping</a>
-              <a routerLink="/cart" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a>
+              <a routerLink="/cart" *ngIf="itemSubTotal > 40" class="checkout-btn hoverd-btn">CHECKOUT <i class="fa fa-mail-forward"></i></a>
             </div>
           </div>
         </div>
