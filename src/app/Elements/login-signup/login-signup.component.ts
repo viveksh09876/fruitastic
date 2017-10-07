@@ -37,27 +37,28 @@ export class LoginSignupComponent implements OnInit {
   createForms() {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      pass: ['', Validators.required]
     });
     this.newsLetterForm = this.fb.group({
       email: ['', Validators.required]
     });
     this.signupForm = this.fb.group({
-      name: ['', Validators.required],
+      firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       pass: ['', Validators.required],
       cPassword: ['', Validators.required],
-      contact: ''
+      contact_no: '',
+      apartment: '',
+      address: '',
+      delv_address: '',
+      delv_address_apartment: '',
     }, { Validator: this.customVal});
   }
+
   doLogin(values) {
-    // safisafi@gmail.com&pass=123456
-    this.authService.doLogin(values).map((res: Response) => {
-      return res.json();
-    }).subscribe((data) => {
-      console.log(data);
-      if(data) {
+    this.authService.doLogin(values).subscribe(data => {
+      if(data[0].status) {
         this.authUser.push(data[0]['id']);
         localStorage.setItem('user', data[0]['id']);
         $('#signinModal').modal('hide');
@@ -67,12 +68,10 @@ export class LoginSignupComponent implements OnInit {
       }
     });
   }
+
   signup(values) {
-    this.authService.signUp(values).map((res: Response) => {
-      return res.json();
-    }).subscribe((data) => {
-      console.log(data);
-      if(data[0]) {
+    this.authService.signUp(values).subscribe(data => {
+      if(data.status=='Deactive') {
         $('#signupModal').modal('hide');
         localStorage.setItem('user', data[0].id);
         this._flashMessagesService.show('Your are register successfully!', { cssClass: 'alert-success', timeout: 2000 });
@@ -81,6 +80,7 @@ export class LoginSignupComponent implements OnInit {
       }
     });
   }
+
   onblurMethod(evt) {
     this.authService.checkuser(evt.target.value).map((res: Response) => {
       return res.json();

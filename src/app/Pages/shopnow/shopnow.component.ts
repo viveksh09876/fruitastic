@@ -4,6 +4,7 @@ import { CartProductsService } from './../../Services/cart-products.service';
 import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { environment } from './../../../environments/environment';
 declare var $: any;
 @Component({
   selector: 'app-shopnow',
@@ -26,23 +27,14 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   constructor(
     private getListService: GetListService,
     private CartProducts: CartProductsService,
-  private _fb: FormBuilder) { 
-    this.Categories = [
-      {name: 'Fruit',id: 2,class: 'fruit'},
-      {name: 'Vegetables',id: 5,class: 'veg'},
-      {name: 'Herbs',id: 3,class: 'herb'},
-      {name: 'Dairy',id: 1,class: 'dairy'},
-      {name: 'Others',id: 6,class: 'other'},
-      {name: 'Box',id: 7,class: 'other'},
-    ];
-    this.activeCatInd = 0;
-  }
+  private _fb: FormBuilder) { }
+  domain = environment.ApiPath;
 
   ngOnInit() {
     this.voucherCodeForm = this._fb.group({
       code: ''
     });
-    this.GetProduct(2, this.cPage);
+    this.GetCategory();
     var self = this;
     this.CartProducts.currentProducts.subscribe(products => this.cartProduct = products);
     $('footer').hide();
@@ -69,20 +61,20 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   ngDoCheck() {
     this.AddAmounts();
   }
-  // GetCategory() {
-  //   this.getListService.Getlist('http://www.binaryfrog.co/web/api/get_cat.php').map((res: Response) => {
-  //     return res.json();
-  //   }).subscribe((data) => {
-  //     this.Categories = data;
-  //     console.log('Categories: ', this.Categories);
-  //     if(this.Categories) {
-  //       this.catLoading = false;
-  //       // this.GetProduct(this.Categories[0]['id'], 1);
-  //       this.GetProduct(2, 1);
-  //       this.activeCat = this.Categories[0]['id'];
-  //     }
-  //   });
-  // }
+  GetCategory() {
+    this.getListService.Getlist(this.domain+'get_cat.php').map((res: Response) => {
+      return res.json();
+    }).subscribe((data) => {
+      this.Categories = data;
+      console.log(this.Categories);
+      if(this.Categories) {
+        this.catLoading = false;
+        this.GetProduct(2, 1);
+        this.activeCat = this.Categories[0]['id'];
+        console.log(this.activeCat);
+      }
+    });
+  }
   GetProduct(catId, page: number) {
     this.proLoading = true;
     this.getListService.Getlist('http://www.binaryfrog.co/web/api/get_product_byid.php?cid='+ catId + '&p=' + page).map((res: Response) => {
