@@ -355,6 +355,7 @@
 	  overflow-x: hidden;
 	}
 	.top_slider{ padding: 0;     /*z-index: -1;*/}
+    .inner-header .bottom_header .menu_sec .navbar-nav li a.active{ color: #fff!important;}
 	header{ position: static !important; float: left;}
 	.bottom_header{ padding: 0 0 0;}
 	#banner_sliders{ clear: both;}
