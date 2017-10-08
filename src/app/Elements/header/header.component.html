@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-7">
                     <ul class="social_icon">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/FruitasticMelbourne/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/fruitasticofficial/"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCqiih4I1gVnIihQmB5ixWUw"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://twitter.com/FruitasticAus"><i class="fa fa-twitter"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-5 pull-right text-right">
@@ -57,8 +57,53 @@
                             </div><!-- /.navbar-collapse -->
                           </nav>
                           <span class="login_part">
-                               <li *ngIf="products.length > 0"><a routerLink="/cart"><i>{{products.length}}</i>${{itemSubTotal | number : '1.2-2'}}</a></li>
-                               <li *ngIf="products.length <= 0"><a routerLink="/shopnow"><i class="fa fa-shoping-cart">0</i></a></li>
+                               <li *ngIf="products.length > 0"><a routerLink="/cart"><i>{{products.length}}</i>${{itemSubTotal | number : '1.2-2'}}</a>
+                                                                 <div class="cartdropdown order-box">
+                                  <h3 class="text-center">Your Order</h3>
+                                  <table class="table">
+                                    <tr>
+                                      <th>Product Name</th>
+                                      <th>Qty</th>
+                                      <th>Sub Total</th>
+                                      <th width="10"></th>
+                                    </tr>
+                                    <tr *ngFor="let pro of cartProduct; let c = index">
+                                      <td [innerHtml]="pro.product_name"></td>
+                                      <td [innerHtml]="pro.qty"></td>
+                                      <td>${{pro.sel_price * pro.qty | number : '1.2-2'}}</td>
+                                      <td><a href="javascript:void(0)" (click)="cartProductRemove(c)"><i class="fa fa-minus"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="2"><span>Item Subtotal</span></td>
+                                      <td>${{itemSubTotal | number : '1.2-2'}}</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="2"><span>Your Shipping </span></td>
+                                      <td>Free</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="4">
+                                        <strong *ngIf="loc">Post Code:</strong> {{loc}} <!--<a href="javascript:void(0)">(Change)</a>-->
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="2"><span>Total Price</span></td>
+                                      <td><span class="total">${{itemSubTotal | number : '1.2-2'}}</span></td>
+                                      <td></td>
+                                    </tr>
+                                  </table>
+                                  
+                                  <div class="text-center">
+                                    <a href="javascript:void(0)" class="checkout-btn hoverd-btn keepshop"> Checkout</a>
+                                    
+                                  </div>
+                                </div>
+                               </li>
+                               <li *ngIf="products.length <= 0">
+                                  <a routerLink="/shopnow"><i class="fa fa-shoping-cart">0</i></a>
+                               </li>
                           </span>
                     </div>
                 </div>
