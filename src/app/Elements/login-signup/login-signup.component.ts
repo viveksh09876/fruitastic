@@ -110,23 +110,15 @@ export class LoginSignupComponent implements OnInit {
     let EmailData = {
       email : evt.target.value
     }
-    // console.log('EmailData' + EmailData);
-    // console.log(EmailData);
+  
     this.authService.checkuser(EmailData).subscribe(data => {
-      // console.log('Response' +data);
-      // console.log(data);
+      if(data[0].status == 'False') {
+        this.emailExits = true;
+        this._flashMessagesService.show('Please use diffrent email!', { cssClass: 'alert-danger', timeout: 2000 });
+      } else {
+        this.emailExits = false;
+      }
     });
-    // this.authService.checkuser(EmailEnter).map((res: Response) => {
-    //   return res.json();
-    // }).subscribe((data) => {
-    //   console.log(data);
-    //   if(data[0].status == 'False') {
-    //     this.emailExits = true;
-    //     this._flashMessagesService.show('Please use diffrent email!', { cssClass: 'alert-danger', timeout: 2000 });
-    //   } else {
-    //     this.emailExits = false;
-    //   }
-    // })
   }
 
 }
