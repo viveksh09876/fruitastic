@@ -25,15 +25,24 @@ export class AuthService {
     .catch( (error: any) => Observable.throw(error.json().error || 'server error') );
   }
 
+  forgotPass(data) : Observable<any>{
+    return this.http.post( this.domain + 'forgot_password.php', data)
+    .map((res: Response) => res.json())
+    .catch( (error: any) => Observable.throw(error.json().error || 'server error') );
+  }
+
   signUp(data) : Observable<any>{
     return this.http.post( this.domain + 'register_user.php', data)
     .map((res: Response) => res.json())
     .catch( (error: any) => Observable.throw(error.json().error || 'server error') );
   }
 
-  checkuser(email) {
-    return this.http.get('http://www.binaryfrog.co/web/api/check_user.php?email='+email);
+  checkuser(data) : Observable<any>{
+    return this.http.post( this.domain + 'check_user.php', data)
+    .map((res: Response) => res.json())
+    .catch( (error: any) => Observable.throw(error.json().error || 'server error') );
   }
+
   signout() {
     localStorage.removeItem('user');
   }

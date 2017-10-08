@@ -13,6 +13,7 @@ export class LoginSignupComponent implements OnInit {
 
   authUser: any[] = [];
   loginForm: FormGroup;
+  forgotForm: FormGroup;
   signupForm: FormGroup;
   newsLetterForm: FormGroup;
   emailExits: boolean = false;
@@ -38,6 +39,9 @@ export class LoginSignupComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
       pass: ['', Validators.required]
+    });
+    this.forgotForm = this.fb.group({
+      email: ['', Validators.required]
     });
     this.newsLetterForm = this.fb.group({
       email: ['', Validators.required]
@@ -69,6 +73,20 @@ export class LoginSignupComponent implements OnInit {
     });
   }
 
+  forgotPass(values){
+    this.authService.forgotPass(values).subscribe(data => {
+      console.log(data);
+      if(data[0].status=='Deactive') {
+        this._flashMessagesService.show(data[0].msg, { cssClass: 'alert-danger', timeout: 2000 });
+      } else if(data[0].status=='fail') {
+        this._flashMessagesService.show(data[0].msg, { cssClass: 'alert-danger', timeout: 2000 });
+      }else if(data[0].status=='True'){
+        $('#forgotModal').modal('hide');
+        this._flashMessagesService.show(data[0].msg, { cssClass: 'alert-success', timeout: 2000 });
+      }
+    });
+  }
+
   signup(values) {
     let loginData = {
       email:values.email,
@@ -89,16 +107,26 @@ export class LoginSignupComponent implements OnInit {
   }
 
   onblurMethod(evt) {
-    this.authService.checkuser(evt.target.value).map((res: Response) => {
-      return res.json();
-    }).subscribe((data) => {
-      if(data == 1) {
-        this.emailExits = true;
-        this._flashMessagesService.show('Please use diffrent email!', { cssClass: 'alert-danger', timeout: 2000 });
-      } else {
-        this.emailExits = false;
-      }
-    })
+    let EmailData = {
+      email : evt.target.value
+    }
+    // console.log('EmailData' + EmailData);
+    // console.log(EmailData);
+    this.authService.checkuser(EmailData).subscribe(data => {
+      // console.log('Response' +data);
+      // console.log(data);
+    });
+    // this.authService.checkuser(EmailEnter).map((res: Response) => {
+    //   return res.json();
+    // }).subscribe((data) => {
+    //   console.log(data);
+    //   if(data[0].status == 'False') {
+    //     this.emailExits = true;
+    //     this._flashMessagesService.show('Please use diffrent email!', { cssClass: 'alert-danger', timeout: 2000 });
+    //   } else {
+    //     this.emailExits = false;
+    //   }
+    // })
   }
 
 }
