@@ -178,6 +178,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
     } else {
       this.PushProduct(pro);
     }
+    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
    // this.actionAdded(btn);
     // console.log(this.cartProduct);
   }
@@ -188,6 +189,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
       }
     });
     this.cartProduct.splice(ind, 1);
+    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
   }
   // actionAdded(btn) {
   //   const ancher = $(btn).closest('td.action').children("a");

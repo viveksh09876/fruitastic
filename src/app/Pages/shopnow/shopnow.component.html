@@ -31,7 +31,7 @@
                       </li>
                   </ng-container>
                   <ng-container *ngIf="!catLoading">
-                    <li *ngFor="let cat of Categories; let i = index" [ngClass]="{'active': activeCat==cat.id}" (click)="ProFilter(cat.id, i)">
+                    <li *ngFor="let cat of Categories; let i = index" [ngClass]="{'active': activeCat==cat.id}" class="{{cat.name | lowercase}}" (click)="ProFilter(cat.id, i)">
                       <a href="javascript:void(0)" [innerHtml]="cat.name"></a>
                     </li>
                   </ng-container>
