@@ -18,7 +18,7 @@ img, fieldset{border:none;}
 a:focus, *:focus , :focus{outline:none}
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
-a:link, a:visited {	text-decoration: none;}
+a:link, a:visited { text-decoration: none;}
 ul,ol{ margin:0; padding:0; list-style:none;}
 h1{ font-weight:normal; margin-top:0; font-family:'Parisien Night';}
 h2{font-family: 'Roboto', sans-serif;} 
@@ -91,6 +91,7 @@ h3{font-family: 'Roboto', sans-serif;}
     z-index: -1;}
 .bottom_header .menu_sec .login_part li a i::before {bottom: -10px;left: -28px;
     content: "\f07a"; position: absolute; z-index: -2; font-size: 26px;}
+    .bottom_header.fixed-header .menu_sec .login_part li a i::before{color: #666;}
 .bottom_header .menu_sec .nav.navbar-nav {padding-top: 20px;padding-right: 50px;}
 .menu_sec .login_part {display: inline-block;vertical-align: middle; /*padding: 0 0 0 35px;*/}
 .fixed-header {background: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.2);left: 0;padding:5px 0;position: fixed;top: 0;transition: all 0.5s ease 0s;width: 100%;z-index: 999999;}
@@ -374,8 +375,8 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
 
 .inner-header .bottom_header .menu_sec .navbar-nav li a{ color: #000;}
 .inner-header{
-	width: 100%; position: relative;
-	float: left; padding-bottom: 10px; box-shadow: 0 0 5px 3px #dddddd; z-index:1000;
+  width: 100%; position: relative;
+  float: left; padding-bottom: 10px; box-shadow: 0 0 5px 3px #dddddd; z-index:1000;
 }
 .inner-header .bottom_header {
   position: static;
@@ -388,9 +389,9 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
 }
 .inner-header .bottom_header .menu_sec .navbar-nav li a:hover, .inner-header .bottom_header .menu_sec .navbar-nav li.active a { color: #ff4141 !important;}
 .inner-header .bottom_header .menu_sec .login_part li a i::before { background-position: 0 -30px!important;}
-.user_section{background-color: #fff; padding: 35px 0 10px;	width: 100%; float: left;}
+.user_section{background-color: #fff; padding: 35px 0 10px; width: 100%; float: left;}
 .user_section label { text-align: left !important; font-weight: 400;}
-.right_text{color: #808080;	font-size: 24px; font-family: 'Roboto', sans-serif; font-weight: 300;}
+.right_text{color: #808080; font-size: 24px; font-family: 'Roboto', sans-serif; font-weight: 300;}
 .us{ padding-bottom:30px;}
 .pa-nigtht{ font-family: 'Parisien Night' !important; letter-spacing: 2px; font-size: 20px; padding-left: 20px; }
 
@@ -408,14 +409,14 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
 
 /************ ***************/
 
-.complete-order {	width: 100%; float: left; margin-top:50px;}
+.complete-order { width: 100%; float: left; margin-top:50px;}
 .order-img{max-width:66px;}
 /*.complete-order table > thead > tr > th{ }*/
 .complete-order > table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {/*padding: 0px 8px !important;*/ vertical-align:middle;}
 .imga{float: left; padding-top: 22px; padding-left: 10px; color: #333 !important;}
 .right_text span{font-size: 15px; padding: 0 31px; color:#808080;}
-.wrape_three_sect{width: 33%;display: inline-block;	vertical-align: top;}
-.wrape_three_sect h6{font-size: 15px; color: #808080;line-height: 24px;	font-family: 'Roboto', sans-serif; font-weight: 300;}
+.wrape_three_sect{width: 33%;display: inline-block; vertical-align: top;}
+.wrape_three_sect h6{font-size: 15px; color: #808080;line-height: 24px; font-family: 'Roboto', sans-serif; font-weight: 300;}
 .wrape_three_sect h6 .img-responsive { display: inline-block; padding-right: 20px;}
 .top-ds-img{ width: 82px;  padding-top: 52px; }
 .top-ds-img2{width: 82px;  padding-top: 44px;}
@@ -518,31 +519,31 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
 /*==================Dashboard End=======================*/
 
 .table_records{
-	background: rgba(0, 0, 0, 0) url("../images/Customer-Dashboard-bg.png") repeat scroll 0 0 / 20% auto;
-	width: 100%;
-	float: left;
+  background: rgba(0, 0, 0, 0) url("../images/Customer-Dashboard-bg.png") repeat scroll 0 0 / 20% auto;
+  width: 100%;
+  float: left;
 }
 .table_records .container{
-	    background-color: #f6f6f6;
+      background-color: #f6f6f6;
     padding: 80px 15px;
-	min-height: 1200px;
+  min-height: 1200px;
 }
 .text_sect{
-	display: inline-block;
-	vertical-align: top;
-	padding-left: 30px;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 30px;
 }
 .text_sect h3{
-	color: #3e3e3e;
-	font-size: 20px;
-	margin-left: -18px;
-	font-family: 'Parisien Night';
+  color: #3e3e3e;
+  font-size: 20px;
+  margin-left: -18px;
+  font-family: 'Parisien Night';
     letter-spacing: 2px;
 }
 .text_sect ul li{
-	position: relative;
-	font-size: 15px;
-	line-height: 25px;
+  position: relative;
+  font-size: 15px;
+  line-height: 25px;
 }
 .dasboard-active{color: #ff4141 !important; text-decoration: underline !important;}
 
@@ -558,8 +559,8 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
 .text_sect ul li a{ color:#666; transition:0.5s ease;}
 .text_sect ul li a:hover{color: #ff4141; text-decoration: underline;}
 .img_sect{
-	display: inline-block;
-	vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .wrape-table {
@@ -570,43 +571,43 @@ footer {background: rgba(0, 0, 0, 0) url("../images/booter_bg.png") no-repeat sc
   width: 95%; box-shadow: 0 4px 3px #ccc;
 }
 .wrape-table h2{
-	font-size: 18px;
-	color: #ef4926;
-	font-weight:400;
+  font-size: 18px;
+  color: #ef4926;
+  font-weight:400;
 }
 .wrape-table table tr th{
-	font-size: 14px;
-	border-bottom: 1px solid rgb(221, 221, 221);
-	font-weight: 400;
-	padding: 20px 8px;
+  font-size: 14px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  font-weight: 400;
+  padding: 20px 8px;
 }
 .wrape-table table tr td{
-	font-size: 14px;
-	font-weight: 300;
-	vertical-align: middle;
-	    padding: 14px 8px;
+  font-size: 14px;
+  font-weight: 300;
+  vertical-align: middle;
+      padding: 14px 8px;
     border-top: 1px solid #efefef;
 }
 .wrape-table table a{
-	color: #ff4141;
+  color: #ff4141;
 }
 .wrape-table table .btn-default{
-	border-radius: 20px;
-	transition: 0.5s ease;
+  border-radius: 20px;
+  transition: 0.5s ease;
     padding: 6px 15px;
 }
 .wrape-table table .btn-primary{
-	background-color: transparent!important;
-	border: none!important;
-	color: #666766!important;
-	border-bottom: 2px solid #868786!important;
-	border-radius: 0;
-	padding-bottom: 0;
+  background-color: transparent!important;
+  border: none!important;
+  color: #666766!important;
+  border-bottom: 2px solid #868786!important;
+  border-radius: 0;
+  padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
 }
 .wrape-table .view_btn{
-	 background: rgb(255, 65, 65) none repeat scroll 0 0;
+   background: rgb(255, 65, 65) none repeat scroll 0 0;
     border-radius: 100px;
     color: rgb(255, 255, 255);
     display: inline-block;
@@ -1012,7 +1013,7 @@ input[type="radio"]:checked:before{ font-family: FontAwesome; content: '\f192'; 
 .hiw_brdr_bottom{  border-bottom:1px dashed #999; transform: rotate(32deg);     margin-top: 136px;}
 .inln_block { display:inline-block;}
 .left_order{ margin-top:30%; margin-top: 46%;}
-.brdr_right:before{ border-top:1px dashed #999; content: ""; display: block; height: 1px; position: absolute; top: 29%; width: 50%; right: -25%;	}
+.brdr_right:before{ border-top:1px dashed #999; content: ""; display: block; height: 1px; position: absolute; top: 29%; width: 50%; right: -25%;  }
 .hiw_brdr_right{ border-bottom:1px dashed #999; transform: rotate(32deg);}
 .hiw_brdr_bottom_right{  border-bottom:1px dashed #999; transform: rotate(-32deg);     margin-top: 136px;}
 .simple_order_margin{ margin-top:28%;}
@@ -1057,192 +1058,193 @@ input[type="radio"]:checked:before{ font-family: FontAwesome; content: '\f192'; 
 
 /*==============16 may css start here=========*/
 .modal-header {
-	padding: 0;
-	border: none;
-	position: relative
+  padding: 0;
+  border: none;
+  position: relative
 }
 button.close {
-	position: absolute;
-	opacity: 1;
-	z-index: 9;
-	width: 30px;
-	height: 30px;
-	line-height: 20px;
-	border-radius: 50%;     background: #fff !important;
+  position: absolute;
+  opacity: 1;
+  z-index: 9;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  border-radius: 50%;     background: #fff !important;
     color: #333;
     border: 2px solid #fff;
     font-size: 20px;
     top: -15px;
     right: -15px;
 }
+button.close:hover{ opacity: 1; }
 #signinModal .modal-dialog {
-	margin-top: 8%;
+  margin-top: 8%;
 }
 #signinModal .col-md-6 {
-	padding: 0 40px;
+  padding: 0 40px;
 }
 #signinModal .signin {
-	border-right: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 #signinModal .guest button {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 #signinModal h3 {
-	font-size: 30px;
-	line-height: 35px;
-	text-align: center;
-	margin: 0 0 20px;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 0 20px;
 }
 #signinModal .form-control {
-	border-radius: 0;
-	height: 40px; font-size: 16px;
+  border-radius: 0;
+  height: 40px; font-size: 16px;
 }
 #signinModal label {
-	color: #333;
-	font-size: 15px;
-	line-height: 20px;
-	margin: 0 0 5px;
-	font-weight: 400;
+  color: #333;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0 0 5px;
+  font-weight: 400;
 }
 #signinModal .modal-body button {
-	background: #ff4141;
-	color: #fff;
-	height: 45px;
-	border-radius: 5px;
-	font-size: 20px;
-	line-height: 25px;
-	border: none; font-weight: 500;
-	display: inline-block;
+  background: #ff4141;
+  color: #fff;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 25px;
+  border: none; font-weight: 500;
+  display: inline-block;
 }
 #signinModal .modal-body button.signup {
-	background: #ff4141;
+  background: #ff4141;
 }
 #signinModal .modal-body {
-	padding:20px;
+  padding:20px;
 }
 #signinModal a {
-	color: #222;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 20px;
-	display: inline-block;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  display: inline-block;
 }
 #signinModal a:hover {
-	text-decoration: underline
+  text-decoration: underline
 }
 #signinModal .join {
-	font-size: 40px;
-	line-height: 40px; margin: 38px 0;
-	font-family: "bureaueaglebookregular";
+  font-size: 40px;
+  line-height: 40px; margin: 38px 0;
+  font-family: "bureaueaglebookregular";
 }
 #signinModal .seprator {
-	display: block;
-	font-size: 18px;
-	line-height: 30px;
-	text-align: center;
-	margin: 15px 0 5px;
-	position: relative
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  margin: 15px 0 5px;
+  position: relative
 }
 #signinModal .seprator:after {
-	position: absolute;
-	left: 0;
-	top: 15px;
-	border-bottom: 1px solid #000;
-	content: '';
-	width: 100%;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  border-bottom: 1px solid #000;
+  content: '';
+  width: 100%;
 }
 #signinModal .seprator small {
-	padding: 0 10px;
-	display: inline-block;
-	background: #fff;
-	position: relative;
-	z-index: 9;
+  padding: 0 10px;
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  z-index: 9;
 }
 /*==============17 may css start here=========*/
 
 .modalopen .modal {
-	overflow-x: hidden;
-	overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 #signupModal .modal-header {
-	padding: 0;
-	border: none;
-	position: relative
+  padding: 0;
+  border: none;
+  position: relative
 }
 #signupModal button.close {
-	
+  
 }
 #signupModal .modal-body {
-	padding: 20px;
+  padding: 20px;
 }
 #signupModal label {
-	color: #333;
-	font-size: 15px;
-	margin: 0 0 5px;
-	font-weight: 400;
+  color: #333;
+  font-size: 15px;
+  margin: 0 0 5px;
+  font-weight: 400;
 }
 #signupModal h3{font-size: 30px; line-height: 35px; margin: 0 0 20px;text-align: center;}
 
 #signupModal .form-control {
-	border-radius: 0;
-	height: 40px; font-size: 16px;
+  border-radius: 0;
+  height: 40px; font-size: 16px;
 }
 #signupModal .nav-tabs {
-	margin-bottom: 30px;
-	background: #789c48;
-	padding: 15px;
+  margin-bottom: 30px;
+  background: #789c48;
+  padding: 15px;
 }
 #signupModal .nav-tabs li {
-	display: inline-block;
-	margin-right: 20px;
-	background: none;
+  display: inline-block;
+  margin-right: 20px;
+  background: none;
 }
 #signupModal .nav-tabs li:after {
-	display: none;
+  display: none;
 }
 #signupModal .nav-tabs li a {
-	color: #fff !important;
-	padding: 0;
-	opacity: .6;
+  color: #fff !important;
+  padding: 0;
+  opacity: .6;
 }
 #signupModal .nav-tabs li a small {
-	background: #fff;
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	color: #789c48;
-	font-size: 20px;
-	display: inline-block;
-	margin-right: 10px;
-	border-radius: 50%;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #789c48;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 #signupModal .nav-tabs li.active a {
-	color: #fff !important;
-	opacity: 1;
+  color: #fff !important;
+  opacity: 1;
 }
 #signupModal .nav-tabs li.active a small {
-	background: #fff;
-	color: #789c48;
+  background: #fff;
+  color: #789c48;
 }
 #signupModal p{ font-size: 18px; line-height: 24px; margin:20px 0 0;}
 #signupModal p a{ text-decoration: underline; color: #FF4141;}
 #signupModal .modal-body button {
-	background: #ff4141;
-	color: #fff;
-	height: 40px;
-	border-radius: 0;
-	font-size: 20px;
-	line-height: 25px;
-	border: none; font-weight: 500;
-	display: inline-block;
+  background: #ff4141;
+  color: #fff;
+  height: 40px;
+  border-radius: 0;
+  font-size: 20px;
+  line-height: 25px;
+  border: none; font-weight: 500;
+  display: inline-block;
 }
 #signupModal .modal-body button.prev {
-	color: #789c48;
-	background: #fff;
-	border: 1px solid #789c48;
+  color: #789c48;
+  background: #fff;
+  border: 1px solid #789c48;
 }
 #signupModal .checkbox label a:hover {
-	text-decoration: underline
+  text-decoration: underline
 }
 
 /*===============Delivery page css start here============*/
@@ -1311,7 +1313,7 @@ button.close {
 /**Ap*/
 .modal-backdrop,
 .modal-open .modal-backdrop {
-	z-index: 123;
+  z-index: 123;
 }
 .flash-messages {
     position: fixed;
@@ -1331,33 +1333,33 @@ button.close {
     display: block;
 }
 .inner-header .bottom_header .menu_sec .navbar-nav li a.active {
-	color: #ff4141 !important;
+  color: #ff4141 !important;
   }
 .bottom_header .menu_sec .navbar-nav li a.active::before,
 .bottom_header .menu_sec .navbar-nav li a.active::after {
 width: 50%;
 }
 header {
-	width: 100%;
+  width: 100%;
 }
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 .form-control.ng-invalid.ng-touched {
     border-color: red;
 }
 @media (min-width: 768px) {
-	.img2{ display:none;}
+  .img2{ display:none;}
 }
 @media (max-width: 991px) {
-	.cart-sidebar ~ .col-lg-3 {
-		background: #fff;
-		margin: 60px 0 0 !important;
-	}
-	#cart-accordion .panel {
-		width: 100% !important;
-	}
+  .cart-sidebar ~ .col-lg-3 {
+    background: #fff;
+    margin: 60px 0 0 !important;
+  }
+  #cart-accordion .panel {
+    width: 100% !important;
+  }
 }
 @media (max-width: 767px) {
-	.inner-header .bottom_header .menu_sec .navbar-nav li a.active{ color: #fff !important;}
+  .inner-header .bottom_header .menu_sec .navbar-nav li a.active{ color: #fff !important;}
 }
