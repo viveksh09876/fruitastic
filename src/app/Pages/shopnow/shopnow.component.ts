@@ -97,7 +97,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
         }
       });
       this.PushProductList(data, page);
-      this.cartProduct = JSON.parse(localStorage.getItem('cartProduct'));
+      //this.cartProduct = JSON.parse(localStorage.getItem('cartProduct'));
       // if(page > 1) {
       //   //this.Products.push(data);
       //   console.log(typeof(this.Products));
@@ -110,7 +110,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   PushProductList(data, page) {
     if(data.length > 0) {
       if(page > 1) {
-        console.log(page);
+        // console.log(page);
         for(var i = 0; i < data.length; i++) {
           this.Products.push(data[i]);
         }
@@ -126,7 +126,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
       this.cPage = 1;
       this.activeCatInd += 1;
     }
-    console.log(this.Products.length);
+    // console.log(this.Products.length);
   }
   onScrollLoad() {
     if(this.activeCatInd <= 5) {
@@ -156,7 +156,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
   }
   PushProduct(pro) {
     this.cartProduct.push(pro);
-    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
+    // localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
   }
   ProductAdd(pro, event) {
     const btn = event.target || event.srcElement || event.currentTarget;
@@ -178,7 +178,8 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
     } else {
       this.PushProduct(pro);
     }
-    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
+    // console.log(qty);
+    // localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
    // this.actionAdded(btn);
     // console.log(this.cartProduct);
   }
@@ -189,7 +190,7 @@ export class ShopnowComponent implements OnInit, DoCheck, OnDestroy {
       }
     });
     this.cartProduct.splice(ind, 1);
-    localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
+    // localStorage.setItem('cartProduct', JSON.stringify(this.cartProduct));
   }
   // actionAdded(btn) {
   //   const ancher = $(btn).closest('td.action').children("a");

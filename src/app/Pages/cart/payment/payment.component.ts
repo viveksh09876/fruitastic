@@ -64,7 +64,7 @@ export class PaymentComponent implements OnInit, AfterViewChecked, AfterViewInit
   }
   createForm() {
     this.paymentForm = this.fb.group({
-      paymentOption: ['', Validators.required]
+     // paymentOption: ['', Validators.required]
     });
   }
   formSubmit(values) {

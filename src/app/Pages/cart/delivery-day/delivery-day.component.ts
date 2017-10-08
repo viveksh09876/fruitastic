@@ -52,7 +52,7 @@ export class DeliveryDayComponent implements OnInit, AfterViewChecked {
     //   orderType: ['', Validators.required]
     // });
     this.deliverDayForm = this.fb.group({
-      date: ['', Validators.required]
+      //date: ['', Validators.required]
     });
   }
   // onChange(day: string, isChecked: boolean) {

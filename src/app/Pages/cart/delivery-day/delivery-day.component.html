@@ -1,51 +1,20 @@
-<!-- <form [formGroup]="deliverDayForm" class="form-horizontal" (ngSubmit)="formSubmit(deliverDayForm.value)">
-  <div class="row">
-    <h3>Delivery Day</h3>
-    <div class="col-sm-4" *ngFor="let day of days">
-      <div class="checkbox">
-        <input (change)="onChange(day.name, $event.target.checked)" id="{{day.name}}" type="checkbox">
-        <label for="{{day.name}}"><h5 class="days">{{day.name}}</h5></label>
-      </div>
-    </div>
-  </div>
-  <p>&nbsp;</p>
-
-  <div class="row">
-
-    <div class="form-group">
-      <h5 class="col-sm-3 selt-othr-typ"><strong>Select Order Type:</strong> </h5>
-      <div class="col-sm-4">
-        <div class="radio">
-          <label class="radio-inline"><input formControlName="orderType" value="OneTime" type="radio" name="orderType"> One Time </label>
-          <label class="radio-inline"> <input formControlName="orderType" value="Reoccuring" type="radio" name="orderType"> Reoccuring </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <input [disabled]="!deliverDayForm.valid" type="submit" class="btn btn-success btn-bordered pull-right" value="Next">
-    </div>
-  </div>
-</form> -->
 <form [formGroup]="deliverDayForm" class="form-horizontal" (ngSubmit)="formSubmit(deliverDayForm.value)">
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-          <div class="form-group full">
-              <div class="col-md-2"></div>
-            <div class="col-sm-12 col-md-4">
-                <input formControlName="date" placeholder="Select delivery date" id="calendar" type="text" class="form-control">
+    <div class="col-md-8 col-sm-7 customer-details deleveryday">
+            <div class="row">
+              <div class="col-sm-11 col-sm-offset-1">
+               <div class="table-responsive">
+                <div class="app">
+                    <div class="app__main">
+                            <div class="calendar">
+                                    <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
       </div>
 
-  <!-- <div class="row">
-    <h3>Delivery Day</h3>
-    <div class="col-sm-4">
-      <input formControlName="date" type="date">
-    </div>
-  </div> -->
   <div class="row">
     <div class="col-sm-12">
       <input [disabled]="!deliverDayForm.valid" type="submit" class="btn btn-success btn-bordered pull-right" value="Next">
